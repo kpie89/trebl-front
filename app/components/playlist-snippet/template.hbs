@@ -1,0 +1,11 @@
+<div id="playlist-list">
+<hr>
+
+<li>Title: {{playlist.title}}
+    Description: {{playlist.desc}}</li>
+{{#if isAuthenticated}}
+<button class="btn btn-default">Add a new song!</button>
+{{/if}}
+</div>
+
+{{yield}}
