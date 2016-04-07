@@ -1,11 +1,17 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model (params) {
-    // return this.store.findAll('playlist');
+  Model (params) {
     return this.store.findRecord('playlist', params.playlist_id);
-      // song: this.store.findAll('song')
+  },
 
 
-  }
+  isEditing: false,
+
+
+  actions: {
+    updatePlaylist(newPlaylist) {
+      newPlaylist.save()
+      .then(() => this.transitionTo('playlists'));  }
+ }
 });
