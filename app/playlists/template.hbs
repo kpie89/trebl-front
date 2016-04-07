@@ -1,1 +1,8 @@
-{{#link-to 'song-search'}}<button type="button" class="btn btn-default">Create New Playlist</button>{{/link-to}}
+{{new-playlist-button}}
+
+{{#each model.playlist as |playlist|}}
+  {{playlist-snippet playlist=playlist deletePlaylist="deletePlaylist"}}
+{{/each}}
+{{!-- {{#each model.song as |song|}}
+{{song-snippet song=song}}
+{{/each}} --}}
