@@ -5,10 +5,20 @@
 <li>Based on: {{playlist.song.title}}</li>
 
 {{#if isAuthenticated}}
-<button class="btn btn-default">Add a new song!</button>
+<button class="btn btn-default"  {{ action "willComment"}}>Add a new song!</button>
 {{/if}}
+{{#link-to 'playlist' playlist}}<button class="btn btn-default">Check it out</button>{{/link-to}}
+<button class="btn btn-default"{{action "playTrack" song.id}}>Play</button>
+<button class="btn btn-default" {{ action "deletePlaylist" playlist}}>Delete this list</button>
 </div>
 
-<button class="btn btn-default" {{ action "deletePlaylist" playlist}}>Delete this list</button>
+{{#if isCommenting}}
+{{song-search-form submit="songSearch"}}
+{{song-results submit="createCommentAndSong" playlist=playlist}}
+{{input type="desc"
+        id="desc"
+        placeholder="Comment here!"
+        value=desc}}
+{{/if}}
 
 {{yield}}
