@@ -10,8 +10,11 @@ Router.map(function () {
   this.route('sign-in');
   this.route('change-password');
   this.route('users');
-  this.route('playlists');
   this.route('song-search');
+  this.route('songs');
+  this.route('playlists');
+  this.route('playlist', { path: '/playlists/:playlist_id' });
+
 });
 
 export default Router;
