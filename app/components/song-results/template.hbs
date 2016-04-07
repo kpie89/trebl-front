@@ -1,9 +1,10 @@
 <div id="song-list">
 <ul>
 {{#each songResults as |song|}}
-  <li>{{song.title}}     <button class="btn btn-default"{{action "playTrack" song.id}}>Play</button>
+  <li>{{song.title}}<button class="btn btn-default"{{action "playTrack" song.id}}>Play</button>
                          <button class="btn btn-default"{{action "stopTrack" song.id}}>Stop</button>
-                         {{#link-to 'create-playlist'}}<button type="submit" class="btn btn-default">Use this song!</button>{{/link-to}}</li>
+                         <button type="submit" {{action "submit" song}}class="btn btn-default">Use this song!</button></li>
+
 {{/each}}
 </ul>
 </div>

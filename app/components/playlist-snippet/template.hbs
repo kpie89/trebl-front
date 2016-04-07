@@ -1,11 +1,14 @@
 <div id="playlist-list">
 <hr>
+<li>Title: {{playlist.title}}</li>
+<li>Description: {{playlist.desc}}</li>
+<li>Based on: {{playlist.song.title}}</li>
 
-<li>Title: {{playlist.title}}
-    Description: {{playlist.desc}}</li>
 {{#if isAuthenticated}}
 <button class="btn btn-default">Add a new song!</button>
 {{/if}}
 </div>
+
+<button class="btn btn-default" {{ action "deletePlaylist" playlist}}>Delete this list</button>
 
 {{yield}}
