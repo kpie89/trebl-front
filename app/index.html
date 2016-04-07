@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Trebl</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{content-for 'head'}}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <div id="title">
+  <title>Trebl</title>
+  </div>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> {{content-for 'head'}}
 
-    <link rel="stylesheet" href="assets/vendor.css">
-    <link rel="stylesheet" href="assets/trebl-front.css">
+  <link rel="stylesheet" href="assets/vendor.css">
+  <link rel="stylesheet" href="assets/trebl-front.css"> {{content-for 'head-footer'}}
+</head>
 
-    {{content-for 'head-footer'}}
-  </head>
-  <body class="container-fluid">
-    {{content-for 'body'}}
+<body class="container-fluid">
+  {{content-for 'body'}}
 
-    <script src="assets/vendor.js"></script>
-    <script src="assets/trebl-front.js"></script>
+  <script src="assets/vendor.js"></script>
+  <script src="assets/trebl-front.js"></script>
 
-    {{content-for 'body-footer'}}
-  </body>
+
+  {{content-for 'body-footer'}}
+</body>
+
 </html>
