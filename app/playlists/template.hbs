@@ -1,7 +1,7 @@
-<h2>Welcome to Trebl. Check out what others have been jammin' to</h2>{{new-playlist-button}}
+{{new-playlist-button}}
 
 {{#each model.playlist as |playlist|}}
-  {{playlist-snippet playlist=playlist deletePlaylist="deletePlaylist" createCommentAndSong="createCommentAndSong" willComment="willComment"}}
+  {{playlist-snippet playlist=playlist deletePlaylist="deletePlaylist" createCommentAndSong="createCommentAndSong" updatePlaylist="updatePlaylist" willComment="willComment"}}
 {{/each}}
 {{!-- {{#each model.song as |song|}}
 {{song-snippet song=song}}

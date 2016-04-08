@@ -33,5 +33,8 @@ export default Ember.Component.extend({
       console.log(songId);
       SC.stream(`/tracks/${songId}`).then((player) => player.play()).catch();
     },
+    updatePlaylist() {
+      this.sendAction("updatePlaylist", this.get('playlist'));
+    }
    }
   });

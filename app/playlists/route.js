@@ -35,6 +35,9 @@ export default Ember.Route.extend({
      willComment (playlist) {
        console.log('here');
        this.transitionTo('comment', playlist);
+     },
+     updatePlaylist (playlist) {
+       this.transitionTo('edit', playlist);
      }
 
   }

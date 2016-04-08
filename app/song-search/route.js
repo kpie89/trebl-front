@@ -14,7 +14,9 @@ export default Ember.Route.extend({
       let songRecord = this.get('store').createRecord('song', {
         title: soundcloudSong.title,
         duration: soundcloudSong.duration,
-        soundcloud_id: soundcloudSong.id
+        soundcloud_id: soundcloudSong.id,
+        about: soundcloudSong.desc,
+        link: soundcloudSong.link
       });
       let playlistRecord = null;
       songRecord.save()
