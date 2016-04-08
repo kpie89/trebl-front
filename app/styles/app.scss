@@ -2,9 +2,42 @@
 @import 'bootstrap/theme';
 
 body {
-  background-color: #69585f;
+  background-color: #d9dbbc;
+  text-align: left;
+  padding-top: 50px;
+  padding-left: 0;
+}
+
+html {
+  font-family: monospace;
+  font-color: #69585f;
+  padding: 0;
 }
 
 nav {
   background-color: #b8d8ba;
+}
+
+#everything {
+  text-align: left;
+}
+
+#playlist-list {
+  text-align: left;
+}
+
+#flash-message {
+  max-width: 200px;
+}
+
+.navbar-fixed-top {
+  border: 0;
+  background: #69585f;
+  color: #ef959d;
+}
+
+.btn {
+  background: #ef959d;
+  padding: 5px 10px;
+  margin-top: 5px;
 }

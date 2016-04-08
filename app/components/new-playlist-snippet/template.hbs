@@ -10,6 +10,7 @@
                 id="desc"
                 placeholder="Description"
                 value=playlist.desc}}
-<li>{{playlist.song.title}}</li>
+
+<h2>{{playlist.song.title}}</h2>
 <button class="btn btn-default" type="submit" {{action "updatePlaylist" playlist=playlist}}>Make it</button>
 </div>

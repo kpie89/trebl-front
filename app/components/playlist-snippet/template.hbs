@@ -1,24 +1,18 @@
 <div id="playlist-list">
-<hr>
-<li>Title: {{playlist.title}}</li>
-<li>Description: {{playlist.desc}}</li>
-<li>Based on: {{playlist.song.title}}</li>
-
-{{#if isAuthenticated}}
-<button class="btn btn-default"  {{ action "willComment"}}>Add a new song!</button>
-{{/if}}
-{{#link-to 'playlist' playlist}}<button class="btn btn-default">Check it out</button>{{/link-to}}
-<button class="btn btn-default"{{action "playTrack" song.id}}>Play</button>
-<button class="btn btn-default" {{ action "deletePlaylist" playlist}}>Delete this list</button>
+  <hr>
+  <h2>{{playlist.title}}</h2>
+  <h3>First up: {{playlist.song.title}}</h3>
+  <h4>{{playlist.desc}}</h4>
+  <h5>Made by: {{playlist.user.email}}</h5>
+  {{playlist.comment}}
+  {{#if isAuthenticated}}
+    <button class="btn btn-default" {{ action "willComment" playlist}}>Add a new song!</button>
+      <button class="btn btn-default" {{ action "deletePlaylist" playlist}}>Delete this list</button>
+  {{/if}}
+  {{#link-to 'playlist' playlist}}
+    <button class="btn btn-default">Check it out</button>
+  {{/link-to}}
+  <button class="btn btn-default" {{action "playTrack" playlist.song.soundcloud_id}}>Play</button>
 </div>
-
-{{#if isCommenting}}
-{{song-search-form submit="songSearch"}}
-{{song-results submit="createCommentAndSong" playlist=playlist}}
-{{input type="desc"
-        id="desc"
-        placeholder="Comment here!"
-        value=desc}}
-{{/if}}
 
 {{yield}}

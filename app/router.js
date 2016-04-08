@@ -13,8 +13,10 @@ Router.map(function () {
   this.route('song-search');
   this.route('songs');
   this.route('playlists');
-  this.route('playlist', { path: '/playlists/:playlist_id' });
-
+  this.route('playlist', { path: 'playlists/:playlist_id' });
+  this.route('edit', { path: 'playlists/:playlist_id/new'});
+  this.route('comment', { path: 'playlists/:playlist_id/comments/search'});
+  this.route('new-comment', { path: 'playlists/comments/:comment_id/new'} );
 });
 
 export default Router;

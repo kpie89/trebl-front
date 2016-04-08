@@ -11,7 +11,7 @@ export default Ember.Route.extend({
     createSongAndPlaylist(soundcloudSong) {
       console.log('here');
       console.log('Song',soundcloudSong);
-      let songRecord = this.store.createRecord('song', {
+      let songRecord = this.get('store').createRecord('song', {
         title: soundcloudSong.title,
         duration: soundcloudSong.duration,
         soundcloud_id: soundcloudSong.id
@@ -19,11 +19,13 @@ export default Ember.Route.extend({
       let playlistRecord = null;
       songRecord.save()
         .then(() => {
-          playlistRecord = this.store.createRecord('playlist');
-          songRecord.get('playlists').pushObject(playlistRecord); // set song_id
+          playlistRecord = this.get('store').createRecord('playlist', {});
+          songRecord.get('playlists').pushObject(playlistRecord);
           return playlistRecord.save();
         })
-        .then(() => this.transitionTo('playlist', playlistRecord));
+        .then(() => {
+          this.transitionTo('edit', playlistRecord);
+        });
     }
   }
 });

@@ -3,7 +3,7 @@
 {{#each songResults as |song|}}
   <h2>{{song.title}}</h2><button class="btn btn-default"{{action "playTrack" song.id}}>Play</button>
                          {{!-- <button class="btn btn-default"{{action "stopTrack" song.id}}>Stop</button> --}}
-                         <button type="submit" {{action "submit" song}}class="btn btn-default">Use this song!</button>
+                         <button type="submit" {{action "submit" song playlist }}class="btn btn-default">Use this song!</button>
 
 {{/each}}
 </div>

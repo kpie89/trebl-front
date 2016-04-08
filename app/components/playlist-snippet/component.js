@@ -5,14 +5,17 @@ export default Ember.Component.extend({
   auth: Ember.inject.service(),
   search: Ember.inject.service(),
   isAuthenticated: Ember.computed.alias('auth.isAuthenticated'),
+  currentUser: Ember.computed.equal('auth.currentUser', 'user.email'),
   isCommenting: false,
+  isNotCommenting: true,
+  chosenSong: false,
 
   actions: {
     deletePlaylist () {
       this.sendAction('deletePlaylist', this.get('playlist'));
     },
-    willComment () {
-      this.toggleProperty('isCommenting');
+    willComment (playlist) {
+      this.sendAction('willComment', playlist);
     },
     songSearch (key) {
       this.get('search').songSearch(key);
@@ -25,10 +28,10 @@ export default Ember.Component.extend({
     },
     viewPlaylist(params) {
       this.transitionTo('playlist', params.playlist_id);
-  },
-  playTrack(songId) {
-    console.log(songId);
-    SC.stream(`/tracks/${songId}`).then((player) => player.play()).catch();
-  },
- }
-});
+    },
+    playTrack(songId) {
+      console.log(songId);
+      SC.stream(`/tracks/${songId}`).then((player) => player.play()).catch();
+    },
+   }
+  });

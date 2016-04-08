@@ -4,9 +4,9 @@ export default Ember.Route.extend({
 
   model() {
     return Ember.RSVP.hash({
-      playlist: this.store.findAll('playlist'),
-      song: this.store.findAll('song'),
-      user: this.store.findAll('user')
+      playlist: this.get('store').findAll('playlist'),
+      song: this.get('store').findAll('song'),
+      user: this.get('store').findAll('user')
     });
   },
   actions: {
@@ -23,7 +23,7 @@ export default Ember.Route.extend({
         let commentRecord = null;
         songRecord.save()
           .then(() => {
-            commentRecord = this.store.createRecord('comment');
+            commentRecord = this.get('store').createRecord('comment');
 
             songRecord.get('comments').pushObject(commentRecord);
             console.log(playlist);
@@ -31,7 +31,11 @@ export default Ember.Route.extend({
             return commentRecord.save();
           })
           .then(() => this.transitionTo('playlists'));
-    }
+    },
+     willComment (playlist) {
+       console.log('here');
+       this.transitionTo('comment', playlist);
+     }
 
   }
 });

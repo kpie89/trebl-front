@@ -5,6 +5,7 @@ export default Ember.Service.extend({
   ajax: Ember.inject.service(),
   credentials: storageFor('auth'),
   isAuthenticated: Ember.computed.bool('credentials.token'),
+  currentUser: Ember.computed.bool('credentials.email'),
 
   signUp (credentials) {
     return this.get('ajax').post('/sign-up', {

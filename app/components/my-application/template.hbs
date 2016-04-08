@@ -1,32 +1,61 @@
-    <h1>Trebl</h1>
-<nav class="navbar navbar-default" id="navbar">
-  <div class="container-fluid">
-    {{navbar-header}}
+  <div id="flash-message">
+    {{#each flashMessages.queue as |flash|}}
+      {{flash-message flash=flash}}
+    {{/each}}
+  </div>
+  <nav class="navbar navbar-inverse navbar-fixed-top" id="navbar">
+    <div class="container-fluid">
+      {{navbar-header}}
 
-    <div class="collapse navbar-collapse" id="navigation">
-      <ul class="nav navbar-nav">
-        {{#if isAuthenticated}}
-        <li>{{#link-to "users"}}Users{{/link-to}}</li>
-        {{/if}}
-      </ul>
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="nav navbar-nav">
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          {{#if isAuthenticated}}
+            <li>
+              {{#link-to "change-password"}}Change Password{{/link-to}}
+            </li>
+            <li><a href="#" {{action "signOut"}}>Sign Out</a></li>
+          {{else}}
+            <li>
+              {{#link-to "sign-up"}}Sign Up{{/link-to}}
+            </li>
+            <li>
+              {{#link-to "sign-in"}}Sign In{{/link-to}}
+            </li>
+          {{/if}}
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <h1>Trebl</h1>
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    {{outlet}}
+  </div>
+
+  {{!-- <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="#" class="navbar-brand">Awesomeproject</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        {{#if isAuthenticated}}
-        <li>{{#link-to "change-password"}}Change Password{{/link-to}}</li>
-        <li><a href="#" {{action "signOut"}}>Sign Out</a></li>
-        {{else}}
-        <li>{{#link-to "sign-up"}}Sign Up{{/link-to}}</li>
-        <li>{{#link-to "sign-in"}}Sign In{{/link-to}}</li>
-        {{/if}}
+        <li>
+          <a href="#" class="nav-item nav-link">Dashboard</a>
+        </li>
+        <li>
+          <a href="#" class="nav-item nav-link">Settings</a>
+        </li>
       </ul>
+      <form class="navbar-form navbar-right">
+        <input type="text" class="form-control" placeholder="Search...">
+      </form>
     </div>
   </div>
-</nav>
-
-
-{{#each flashMessages.queue as |flash|}}
-  {{flash-message flash=flash}}
-{{/each}}
-
-<div class="col-md-8 col-md-offset-2">
-  {{outlet}}
-</div>
+</nav> --}}

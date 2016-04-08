@@ -14,10 +14,10 @@ export default Ember.Component.extend({
       console.log(songId);
       SC.stream(`/tracks/${songId}`).then((player) => player.play()).catch();
     },
-    submit(song) {
+    submit(song, playlist) {
       console.log(song);
-      this.sendAction('submit', song);
-      this.toggleProperty('peeping');
+      console.log(playlist);
+      this.sendAction('submit', song, playlist);
     }
   }
 });
