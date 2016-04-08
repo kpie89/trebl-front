@@ -1,5 +1,6 @@
 # Front End for Trebl - An app that let's people connect and make social playlists
-
+Link to back-end repo
+"https://github.com/kpie89/trebl-api"
 
 # Overview
 This is a social platform for building community playlists. It was built using Ruby on Rails and PostgrSQL on the back end and Ember on the front end.
