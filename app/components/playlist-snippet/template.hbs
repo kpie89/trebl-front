@@ -1,14 +1,17 @@
 <div id="playlist-list">
   <hr>
-  {{!-- <h2>{{playlist.title}}</h2> --}}
+  <h2>{{playlist.title}}</h2>
   <h3>{{playlist.song.title}}</h3>
   <h4>{{playlist.desc}}</h4>
-  {{!-- <h5>Made by: {{playlist.user.email}}</h5> --}}
-  {{playlist.comment}}
-  {{!-- {{#if isAuthenticated}} --}}
-    {{!-- <button class="btn btn-default" {{ action "willComment" playlist}}>Add a new song!</button> --}}
+  <h5>Made by: {{playlist.user.email}}</h5>
+{{#each playlist.comments as |comment|}}
+{{comment.song.title}}
+{{comment.desc}}
+{{/each}}
+  {{#if isAuthenticated}}
+    <button class="btn btn-default" {{ action "willComment" playlist}}>Add a new song!</button>
       <button class="btn btn-default" {{ action "deletePlaylist" playlist}}>Over it.</button>
-  {{!-- {{/if}} --}}
+  {{/if}}
   {{#link-to 'playlist' playlist}}
     <button class="btn btn-default">Details</button>
   {{/link-to}}

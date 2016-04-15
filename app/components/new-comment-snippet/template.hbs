@@ -1,11 +1,11 @@
 <div id="playlist-list">
 <hr>
+<h2>{{playlist.song.title}}</h2>
         <label for="desc">Description</label>
         {{input type="desc"
                 id="desc"
                 placeholder="Description"
                 value=comment.desc}}
 
-<h2>{{playlist.song.title}}</h2>
 <button class="btn btn-default" type="submit" {{action "updateComment"}}>Make it</button>
 </div>
