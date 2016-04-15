@@ -6,7 +6,8 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       playlist: this.get('store').findAll('playlist'),
       song: this.get('store').findAll('song'),
-      user: this.get('store').findAll('user')
+      user: this.get('store').findAll('user'),
+      comment: this.get('store').findAll('comment')
     });
   },
   actions: {
