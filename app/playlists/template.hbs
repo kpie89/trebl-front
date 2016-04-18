@@ -1,8 +1,5 @@
 {{new-playlist-button}}
 
 {{#each model.playlist as |playlist|}}
-  {{playlist-snippet playlist=playlist deletePlaylist="deletePlaylist" createCommentAndSong="createCommentAndSong" updatePlaylist="updatePlaylist" willComment="willComment"}}
+  {{playlist-snippet playlist=playlist deletePlaylist="deletePlaylist" createCommentAndSong="createCommentAndSong" updatePlaylist="updatePlaylist" willComment="willComment" playtrack="playTrack"}}
 {{/each}}
-{{!-- {{#each model.song as |song|}}
-{{song-snippet song=song}}
-{{/each}} --}}

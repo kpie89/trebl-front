@@ -30,8 +30,8 @@ export default Ember.Component.extend({
       this.transitionTo('playlist', params.playlist_id);
     },
     playTrack(songId) {
-      console.log(songId);
-      SC.stream(`/tracks/${songId}`).then((player) => player.play()).catch();
+      console.log('here');
+      this.sendAction('playTrack', songId);
     },
     updatePlaylist() {
       this.sendAction("updatePlaylist", this.get('playlist'));

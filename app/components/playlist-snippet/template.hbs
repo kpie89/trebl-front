@@ -2,12 +2,8 @@
   <hr>
   <h2>{{playlist.title}}</h2>
   <h3>{{playlist.song.title}}</h3>
-  <h4>{{playlist.desc}}</h4>
+  <h4>{{playlist.desc}}</h4><button class="btn btn-default" {{action "updatePlaylist"}}>Update</button>
   <h5>Made by: {{playlist.user.email}}</h5>
-{{#each playlist.comments as |comment|}}
-{{comment.song.title}}
-{{comment.desc}}
-{{/each}}
   {{#if isAuthenticated}}
     <button class="btn btn-default" {{ action "willComment" playlist}}>Add a new song!</button>
       <button class="btn btn-default" {{ action "deletePlaylist" playlist}}>Over it.</button>
@@ -15,8 +11,16 @@
   {{#link-to 'playlist' playlist}}
     <button class="btn btn-default">Details</button>
   {{/link-to}}
-  <button class="btn btn-default" {{action "updatePlaylist"}}>Update</button>
   <button class="btn btn-default" {{action "playTrack" playlist.song.soundcloud_id}}>Play</button>
 </div>
+{{!-- <div>
+  <hr>
+  {{#each playlist.comments as |comment|}}
+  {{comment.song.title}}
+  {{comment.desc}}
+  {{comment.song.soundcloud_id}}
+  <button class="btn btn-default" {{action "playTrack" comment.song.soundcloud_id}}>Play</button>
+  {{/each}}
+</div> --}}
 
 {{yield}}

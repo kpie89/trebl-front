@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import SC from 'npm:soundcloud';
 
 export default Ember.Route.extend({
 
@@ -39,7 +40,11 @@ export default Ember.Route.extend({
      },
      updatePlaylist (playlist) {
        this.transitionTo('edit', playlist);
-     }
+     },
+     playTrack(songId) {
+       console.log(songId);
+       SC.stream(`/tracks/${songId}`).then((player) => player.play()).catch();
+     },
 
   }
 });

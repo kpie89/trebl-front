@@ -1,9 +1,19 @@
 <div id="playlist-list">
+  <h2>Original Song:</h2>
   <hr>
   <h2>{{playlist.title}}</h2>
   <h3>{{playlist.song.title}}</h3>
   <h4>{{playlist.desc}}</h4>
-  <h4>{{playlist.song.link}}</h4>
-  <h4>{{playlist.song.about}}</h4>
-  {{!-- <h5>Made by: {{playlist.user.email}}</h5> --}}
+  <h5>Made by: {{playlist.user.email}}</h5>
+  <button class="btn btn-default" {{action "playTrack" playlist.song.soundcloud_id}}>Play</button>
 </div>
+<div>
+  <h2>Song suggestions:</h2>
+  <hr>
+  {{#each playlist.comments as |comment|}}
+    <h3>{{comment.song.title}}</h3>
+    <h4>{{comment.desc}}</h4>
+    <button class="btn btn-default" {{action "playTrack" comment.song.soundcloud_id}}>Play</button>
+  {{/each}}
+</div>
+<button class="btn btn-default" {{ action "willComment" playlist}}>Add a new song!</button>
