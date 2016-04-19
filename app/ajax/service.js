@@ -3,6 +3,7 @@ import AjaxService from 'ember-ajax/services/ajax';
 
 export default AjaxService.extend({
   auth: Ember.inject.service(),
+  host: 'https://intense-peak-50465.herokuapp.com/',
   headers: Ember.computed('auth.credentials.token', {
     get() {
       let headers = {};
