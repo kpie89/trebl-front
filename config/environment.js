@@ -40,6 +40,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.host = 'https://intense-peak-50465.herokuapp.com/';
     ENV.locationType = 'hash';
     ENV.baseURL = '/trebl-front/';
 
