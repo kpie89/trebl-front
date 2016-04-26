@@ -3,21 +3,14 @@
 // @import 'font-awesome';
 
 body {
-  background-color: #d9dbbc;
+  // background-color: #d9dbbc;
+  font-color: #b8d8ba;
   text-align: left;
   padding-top: 50px;
   padding-left: 0;
+  font-family: 'Play', sans-serif;
 }
 
-html {
-  font-family: monospace;
-  font-color: #69585f;
-  padding: 0;
-}
-
-nav {
-  background-color: #b8d8ba;
-}
 
 #everything {
   text-align: left;
@@ -34,11 +27,14 @@ nav {
 }
 
 .btn {
-  // background: #ef959d;
+  background: #b8d8ba;
   padding: 5px 10px;
   margin-top: 5px;
 }
 
-#title {
-  background-image: image('../../public/images/trebl_background_2.png');
+.title {
+  height:125px;
+  font-size: 100px;
+  background-image: url('/assets/images/trebl_background_small.png');
+  background-repeat: no-repeat;
 }
