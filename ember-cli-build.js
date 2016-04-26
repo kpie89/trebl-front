@@ -8,6 +8,10 @@ module.exports = function(defaults) {
       includePaths: [
         'bower_components/bootstrap-sass/assets/stylesheets'
       ]
+    },
+    emberCliFontAwesome: {
+      useScss: true, // for ember-cli-sass
+      useLess: true  // for ember-cli-less
     }
   });
 

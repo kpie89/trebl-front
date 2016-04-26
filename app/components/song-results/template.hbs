@@ -1,7 +1,8 @@
 <div id="song-list">
 <hr>
 {{#each songResults as |song|}}
-  <h2>{{song.title}}</h2><button class="btn btn-default"{{action "playTrack" song.id}}>Play</button>
+  <h2>{{song.title}}</h2><button class="btn btn-primary"{{action "playTrack" song.id}}>Play</button>
+                          {{!-- {{fa-icon "play-circle" click=(action "playTrack" song.id)}} --}}
                          {{!-- <button class="btn btn-default"{{action "stopTrack" song.id}}>Stop</button> --}}
                          <button type="submit" {{action "submit" song}}class="btn btn-default">Use this song!</button>
 

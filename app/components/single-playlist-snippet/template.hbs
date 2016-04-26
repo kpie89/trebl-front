@@ -13,6 +13,7 @@
   {{#each playlist.comments as |comment|}}
     <h3>{{comment.song.title}}</h3>
     <h4>{{comment.desc}}</h4>
+    <h5>Commenter: {{comment.user.email}}</h5>
     <button class="btn btn-default" {{action "playTrack" comment.song.soundcloud_id}}>Play</button>
   {{/each}}
 </div>

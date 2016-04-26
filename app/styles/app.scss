@@ -1,5 +1,6 @@
 @import 'bootstrap';
 @import 'bootstrap/theme';
+// @import 'font-awesome';
 
 body {
   background-color: #d9dbbc;
@@ -36,4 +37,8 @@ nav {
   // background: #ef959d;
   padding: 5px 10px;
   margin-top: 5px;
+}
+
+#title {
+  background-image: image('../../public/images/trebl_background_2.png');
 }
