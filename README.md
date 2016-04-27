@@ -1,4 +1,8 @@
 # Front End for Trebl - An app that let's people connect and make social playlists
+
+Link to deployed site:
+"http://kpie89.github.io/trebl-front"
+
 Link to back-end repo
 "https://github.com/kpie89/trebl-api"
 
